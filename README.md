@@ -86,20 +86,8 @@ After successful execution, the notebook produces:
 
 Speedup is computed as:
 
-\[
+$$
 \mathrm{Speedup}(N) = \frac{T_{\mathrm{CPU,median}}(N)}{T_{\mathrm{implementation,median}}(N)}
-\]
+$$
 
 A speedup greater than 1 means the implementation was faster than the CPU baseline for that matrix size; below 1 means slower.
-
-## Suggested extensions
-
-- Add CUDA error checking after allocations, copies, and kernel launches.
-- Print/export the kernel-only CUDA Event measurement separately from end-to-end timing.
-- Add numerical correctness checks against a reference implementation, with an appropriate floating-point tolerance.
-- Compare with tiled shared-memory CUDA kernels and cuBLAS GEMM.
-- Make timing scopes consistent and record GPU model, CUDA version, and compiler versions for reproducibility.
-
-## Project scope
-
-This README documents the notebook **as provided**. No benchmark timings or performance claims are invented; results depend on the CPU/GPU hardware and runtime environment used to execute it.
